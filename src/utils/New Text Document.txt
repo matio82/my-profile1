@@ -1,0 +1,14 @@
+// داده‌های پروژه‌ها - ابتدا خالی است
+export const projectsData = [
+  // مثال:
+  // {
+  //   id: 1,
+  //   title: 'عنوان پروژه',
+  //   description: 'توضیحات کوتاه پروژه',
+  //   image: '/images/project1.jpg',
+  //   tags: ['React', 'فرانت‌اند'],
+  //   technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+  //   github: 'https://github.com/username/project',
+  //   demo: 'https://project-demo.com',
+  // },
+];
