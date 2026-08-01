@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const ProjectCard = ({ project }) => {
+  const { language, t } = useLanguage();
+  const title = project.title?.[language] ?? project.title;
+  const description = project.description?.[language] ?? project.description;
+  const arrow = language === 'fa' ? '←' : '→';
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -13,7 +18,7 @@ const ProjectCard = ({ project }) => {
       <div className="relative h-48 overflow-hidden group">
         <img
           src={project.image}
-          alt={project.title}
+          alt={title}
           className="w-full h-full object-cover transform group-hover:scale-110
                      transition-transform duration-500"
         />
@@ -69,18 +74,18 @@ const ProjectCard = ({ project }) => {
         <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600
                          bg-blue-100 dark:bg-blue-900 dark:text-blue-300
                          rounded-full mb-3">
-          {project.category}
+          {t(`portfolio.categories.${project.category}`)}
         </span>
 
         {/* عنوان */}
         <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2
                        hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          {project.title}
+          {title}
         </h3>
 
         {/* توضیحات */}
         <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-          {project.description}
+          {description}
         </p>
 
         {/* تکنولوژی‌ها */}
@@ -108,8 +113,8 @@ const ProjectCard = ({ project }) => {
             className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400
                        hover:gap-3 transition-all font-semibold"
           >
-            مشاهده پروژه
-            <span>←</span>
+            {t('projectCard.viewProject')}
+            <span>{arrow}</span>
           </Link>
         ) : (
           <Link
@@ -117,8 +122,8 @@ const ProjectCard = ({ project }) => {
             className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400
                        hover:gap-3 transition-all font-semibold"
           >
-            مشاهده جزئیات
-            <span>←</span>
+            {t('projectCard.viewDetails')}
+            <span>{arrow}</span>
           </Link>
         )}
       </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const ProjectFilters = ({ 
   categories, 
@@ -8,6 +9,7 @@ const ProjectFilters = ({
   searchQuery,
   onSearchChange 
 }) => {
+  const { t } = useLanguage();
   return (
     <div className="mb-12 space-y-6">
       {/* دسته‌بندی‌ها */}
@@ -24,7 +26,7 @@ const ProjectFilters = ({
                 : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
           >
-            {category}
+            {t(`portfolio.categories.${category}`)}
           </motion.button>
         ))}
       </div>
@@ -35,7 +37,7 @@ const ProjectFilters = ({
           <FaSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder="جستجو در پروژه‌ها..."
+            placeholder={t('portfolio.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             className="w-full pr-12 pl-4 py-3 rounded-full bg-white dark:bg-gray-800 
@@ -49,7 +51,9 @@ const ProjectFilters = ({
       {/* نمایش تعداد نتایج */}
       <div className="text-center">
         <p className="text-gray-600 dark:text-gray-400">
-          {selectedCategory === 'همه' ? 'همه پروژه‌ها' : `دسته‌بندی: ${selectedCategory}`}
+          {selectedCategory === 'all'
+            ? t('portfolio.allProjects')
+            : `${t('portfolio.categoryLabel')}: ${t(`portfolio.categories.${selectedCategory}`)}`}
         </p>
       </div>
     </div>

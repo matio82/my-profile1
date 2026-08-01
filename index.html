@@ -1,16 +1,27 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="وب‌سایت شخصی مهدی - توسعه‌دهنده فرانت‌اند و طراح رابط کاربری" />
+    <meta name="description" content="Mahdi's personal website - Frontend developer and UI/UX designer" />
     <meta name="keywords" content="React, Frontend Developer, UI/UX Designer, Portfolio" />
     <meta name="author" content="Mahdi" />
-    
+
+    <!-- تنظیم فوری زبان/جهت قبل از رندر React، برای جلوگیری از فلش زبان اشتباه -->
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem('language') || 'en';
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Mahdi - Frontend Developer" />
-    <meta property="og:description" content="وب‌سایت شخصی مهدی - توسعه‌دهنده فرانت‌اند" />
+    <meta property="og:description" content="Mahdi's personal website - Frontend developer" />
     <meta property="og:type" content="website" />
     
     <!-- Preconnect for Performance -->

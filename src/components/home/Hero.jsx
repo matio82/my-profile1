@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 import MagneticBackground from '../common/MagneticBackground';
 import { fadeInUp } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-10">
       {/* پس‌زمینه مغناطیسی */}
@@ -41,7 +43,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
           >
-            توسعه‌دهنده فرانت‌اند | طراح رابط کاربری
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.p
@@ -50,7 +52,7 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            با بیش از چند سال تجربه در طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -62,14 +64,14 @@ const Hero = () => {
             <Link to="/portfolio">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="primary" size="lg">
-                  مشاهده نمونه کارها
+                  {t('hero.ctaPortfolio')}
                 </Button>
               </motion.div>
             </Link>
             <Link to="/contact">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="secondary" size="lg">
-                  تماس با من
+                  {t('hero.ctaContact')}
                 </Button>
               </motion.div>
             </Link>
