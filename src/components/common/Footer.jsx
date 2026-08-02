@@ -1,6 +1,8 @@
 import { FaGithub, FaTelegram, FaInstagram } from 'react-icons/fa';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const socialLinks = [
     {
       icon: FaGithub,
@@ -26,7 +28,7 @@ const Footer = () => {
           {/* کپی‌رایت */}
           <div className="text-center md:text-right">
             <p className="text-gray-400">
-              © {new Date().getFullYear()} تمامی حقوق محفوظ است
+              © {new Date().getFullYear()} {t('footer.rights')}
             </p>
           </div>
 

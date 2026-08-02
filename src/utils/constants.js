@@ -1,10 +1,12 @@
+import { translations } from './translations';
+
 export const SITE_INFO = {
-  name: 'آقا مهدی',
-  title: 'توسعه‌دهنده فرانت‌اند و طراح UI/UX',
-  description: 'متخصص React، Vue و توسعه وردپرس با تجربه طراحی رابط کاربری',
+  name: { en: translations.en.siteInfo.name, fa: translations.fa.siteInfo.name },
+  title: { en: translations.en.siteInfo.title, fa: translations.fa.siteInfo.title },
+  description: { en: translations.en.siteInfo.description, fa: translations.fa.siteInfo.description },
   email: 'mahdimotee8@gmail.com',
   phone: '+98 910 996 8286',
-  location: 'قم، ایران',
+  location: { en: translations.en.siteInfo.location, fa: translations.fa.siteInfo.location },
   
   social: {
     github: 'https://github.com/matio82',

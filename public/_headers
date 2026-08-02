@@ -1,0 +1,11 @@
+# این فایل فقط روی هاست‌هایی مثل Netlify کار می‌کنه که از فرمت _headers پشتیبانی می‌کنن.
+# اگه روی هاست دیگه‌ای (Vercel, GitHub Pages, سرور خودتون و...) دیپلوی می‌کنید،
+# باید معادل این هدرها رو با تنظیمات همون پلتفرم اضافه کنید.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io

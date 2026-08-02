@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const CTA = () => {
+  const { t } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,14 +85,14 @@ const CTA = () => {
           variants={itemVariants}
           className="text-3xl md:text-5xl font-bold text-white mb-6"
         >
-          آماده همکاری هستیم! 🚀
+          {t('cta.title')}
         </motion.h2>
         
         <motion.p
           variants={itemVariants}
           className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto"
         >
-          پروژه خود را با ما شروع کنید
+          {t('cta.subtitle')}
         </motion.p>
 
         <motion.div variants={itemVariants}>
@@ -118,7 +120,7 @@ const CTA = () => {
               />
               
               <span className="relative z-10 text-lg">
-                همین حالا تماس بگیرید ✨
+                {t('cta.button')}
               </span>
             </motion.button>
           </Link>

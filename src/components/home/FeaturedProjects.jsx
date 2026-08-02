@@ -2,14 +2,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { containerVariants, itemVariants } from '../../utils/animations';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const FeaturedProjects = () => {
+  const { t } = useLanguage();
   // تعریف دستی داده پروژه کافه
   const featuredProjects = [
     {
       id: 'cafe',
-      title: 'پروژه کافه',
-      description: 'سیستم سفارش آنلاین کافه برای ثبت سفارش مشتریان',
+      title: t('featuredProjects.cafe.title'),
+      description: t('featuredProjects.cafe.description'),
       image: '/images/projects/cafe-project.jpg',
       technologies: ['React', 'Tailwind CSS', 'Formspree'],
       github: 'https://github.com/yourusername/cafe-project', // آدرس گیت‌هاب واقعی رو بذار
@@ -29,10 +31,10 @@ const FeaturedProjects = () => {
           className="text-center mb-16"
         >
           <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4 text-light-text dark:text-dark-text">
-            پروژه‌ برگزیده
+            {t('featuredProjects.title')}
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-lg">
-            نمونه‌ای از کار من
+            {t('featuredProjects.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -53,7 +55,7 @@ const FeaturedProjects = () => {
             >
               {/* تصویر */}
               <div className="relative h-48 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
 
@@ -70,14 +72,14 @@ const FeaturedProjects = () => {
                 </div>
                 <div className="flex gap-4">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary">
-                    <FiGithub size={20} /> <span>کد</span>
+                    <FiGithub size={20} /> <span>{t('featuredProjects.code')}</span>
                   </a>
                   <Link
   to="/projects/cafe"
   className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
 >
   <FiExternalLink size={20} />
-  <span>مشاهده پروژه</span>
+  <span>{t('featuredProjects.viewProject')}</span>
 </Link>
                 </div>
               </div>

@@ -8,12 +8,17 @@ import {
 } from 'react-icons/fa';
 import SectionTitle from '../components/common/SectionTitle';
 import { BsTwitterX } from 'react-icons/bs';
+import { useLanguage } from '../hooks/useLanguage.jsx';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const Contact = () => {
+  usePageSEO('seo.contact.title', 'seo.contact.description');
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    _gotcha: '' // فیلد تله برای بات‌ها؛ کاربر واقعی هرگز اینو پر نمی‌کنه
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,11 +33,18 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // اگه فیلد تله پر شده باشه یعنی احتمالاً یه بات فرم رو پر کرده، ساکت رد می‌کنیم
+    if (formData._gotcha) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://formspree.io/f/mblqrpzr', {
+      const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mblqrpzr';
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,11 +54,12 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', _gotcha: '' });
       } else {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Contact form submission failed:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -56,21 +69,21 @@ const Contact = () => {
   const contactMethods = [
     {
       icon: BsTwitterX,
-      title: 'توییتر',
+      title: t('contact.methodTitles.twitter'),
       value: 'boy8_iranian',
       href: 'https://x.com/boy8_iranian?t=nIG_MrBFJhi-csTdWuqvBA&s=09',
       color: 'from-red-500 to-orange-500'
     },
     {
       icon: FaTelegram,
-      title: 'تلگرام',
+      title: t('contact.methodTitles.telegram'),
       value: '@Mm_02_08',
       href: 'https://t.me/Mm_02_08',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: FaInstagram,
-      title: 'اینستاگرام',
+      title: t('contact.methodTitles.instagram'),
       value: '@mahdim.100',
       href: 'https://www.instagram.com/mahdim.110?igsh=N3ViNGhrNGVsc2I=',
       color: 'from-purple-500 to-pink-500'
@@ -81,8 +94,9 @@ const Contact = () => {
     <div className="min-h-screen pt-20 pb-16">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="تماس با من"
-          subtitle="برای همکاری و پروژه‌های جدید با من در ارتباط باشید"
+          title={t('contact.title')}
+          subtitle={t('contact.subtitle')}
+          level="h1"
         />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -94,17 +108,29 @@ const Contact = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              ارسال پیام
+              {t('contact.form.sendMessage')}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* فیلد تله ضد اسپم - برای کاربر واقعی مخفیه */}
+              <input
+                type="text"
+                name="_gotcha"
+                value={formData._gotcha}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+              />
+
               {/* نام */}
               <div>
                 <label 
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  نام و نام خانوادگی
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -113,11 +139,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength={100}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                            focus:ring-2 focus:ring-blue-500 focus:border-transparent
                            transition-all outline-none"
-                  placeholder="نام خود را وارد کنید"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
@@ -127,7 +154,7 @@ const Contact = () => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  ایمیل
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -136,6 +163,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  maxLength={254}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                            focus:ring-2 focus:ring-blue-500 focus:border-transparent
@@ -150,7 +178,7 @@ const Contact = () => {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  پیام
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -158,12 +186,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={5000}
                   rows="5"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                            focus:ring-2 focus:ring-blue-500 focus:border-transparent
                            transition-all outline-none resize-none"
-                  placeholder="پیام خود را بنویسید..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
@@ -181,12 +210,12 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <span className="animate-spin">⏳</span>
-                    در حال ارسال...
+                    {t('contact.form.submitting')}
                   </>
                 ) : (
                   <>
                     <FaPaperPlane />
-                    ارسال پیام
+                    {t('contact.form.submit')}
                   </>
                 )}
               </button>
@@ -195,14 +224,14 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 
                               px-4 py-3 rounded-lg text-center">
-                  ✅ پیام شما با موفقیت ارسال شد!
+                  {t('contact.form.success')}
                 </div>
               )}
               
               {submitStatus === 'error' && (
                 <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 
                               px-4 py-3 rounded-lg text-center">
-                  ❌ خطا در ارسال پیام. لطفاً دوباره تلاش کنید.
+                  {t('contact.form.error')}
                 </div>
               )}
             </form>
@@ -216,7 +245,7 @@ const Contact = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              راه‌های ارتباطی
+              {t('contact.methods')}
             </h3>
 
             {contactMethods.map((method, index) => (

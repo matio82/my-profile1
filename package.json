@@ -1,8 +1,20 @@
 {
-  "name": "personal-website",
+  "name": "mahdi-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Mahdi's personal portfolio website - a bilingual (English/Persian) frontend developer portfolio built with React, Vite, and Tailwind CSS.",
+  "author": "Mahdi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matio82/my-profile1"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "frontend-developer",
+    "ui-ux-designer"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

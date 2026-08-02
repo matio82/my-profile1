@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../../hooks/useTheme.jsx'; // ⬅️ import کن
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const Navbar = () => { // ⬅️ props رو حذف کن
   const { theme, toggleTheme } = useTheme(); // ⬅️ مستقیم از hook بگیر
+  const { language, toggleLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -20,28 +22,16 @@ const Navbar = () => { // ⬅️ props رو حذف کن
   }, []);
 
   const navLinks = [
-    { path: '/', label: 'خانه' },
-    { path: '/portfolio', label: 'نمونه کارها' },
-    { path: '/contact', label: 'تماس با من' },
+    { path: '/', label: t('nav.home') },
+    { path: '/portfolio', label: t('nav.portfolio') },
+    { path: '/contact', label: t('nav.contact') },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   // ⬅️ اضافه کردن لاگ برای تست
   const handleThemeClick = () => {
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('🖱️ کلیک روی دکمه تم در Navbar!');
-    console.log('📌 تم فعلی:', theme);
-    console.log('📌 localStorage قبل:', localStorage.getItem('theme'));
-    
     toggleTheme();
-    
-    setTimeout(() => {
-      console.log('✅ بعد از toggleTheme:');
-      console.log('   - تم جدید:', localStorage.getItem('theme'));
-      console.log('   - کلاس dark:', document.documentElement.classList.contains('dark'));
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    }, 100);
   };
 
   return (
@@ -62,7 +52,7 @@ const Navbar = () => { // ⬅️ props رو حذف کن
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold bg-gradient-to-r from-primary-light to-secondary-light bg-clip-text text-transparent"
             >
-              مهدی
+              {t('nav.logo')}
             </motion.div>
           </Link>
 
@@ -93,6 +83,18 @@ const Navbar = () => { // ⬅️ props رو حذف کن
             >
               {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
             </motion.button>
+
+            {/* Language Toggle */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleLanguage}
+              className="px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold"
+              type="button"
+              aria-label={language === 'fa' ? 'Switch to English' : 'تغییر به فارسی'}
+            >
+              {language === 'fa' ? 'EN' : 'فا'}
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,6 +106,16 @@ const Navbar = () => { // ⬅️ props رو حذف کن
               type="button" // ⬅️ اضافه کن
             >
               {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
+            </motion.button>
+
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleLanguage}
+              className="px-2.5 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold"
+              type="button"
+              aria-label={language === 'fa' ? 'Switch to English' : 'تغییر به فارسی'}
+            >
+              {language === 'fa' ? 'EN' : 'فا'}
             </motion.button>
 
             <button

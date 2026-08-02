@@ -1,8 +1,11 @@
+import { translations } from './translations';
+
+// ⚠️ TODO: لینک‌های گیت‌هاب پروژه‌ها (github) الان placeholder هستن ("yourusername") — قبل از پابلیش با آدرس واقعی ریپوهاتون جایگزین کنید
 export const projects = [
   {
     id: 1,
-    title: "فروشگاه آنلاین",
-    description: "یک فروشگاه کامل با React و Node.js با قابلیت مدیریت محصولات، سبد خرید و پرداخت آنلاین",
+    title: { en: translations.en.projects[1].title, fa: translations.fa.projects[1].title },
+    description: { en: translations.en.projects[1].description, fa: translations.fa.projects[1].description },
     image: "/images/projects/project1.jpg",
     technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
     github: "https://github.com/yourusername/project1",
@@ -11,8 +14,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: "داشبورد مدیریتی",
-    description: "پنل ادمین پیشرفته با نمودارها و گزارش‌های تحلیلی برای مدیریت کسب‌وکار",
+    title: { en: translations.en.projects[2].title, fa: translations.fa.projects[2].title },
+    description: { en: translations.en.projects[2].description, fa: translations.fa.projects[2].description },
     image: "/images/projects/project2.jpg",
     technologies: ["React", "Chart.js", "Material-UI", "Firebase"],
     github: "https://github.com/yourusername/project2",
@@ -21,8 +24,8 @@ export const projects = [
   },
   {
     id: 3,
-    title: "اپلیکیشن آب‌وهوا",
-    description: "نمایش وضعیت آب‌وهوا با استفاده از API با طراحی زیبا و انیمیشن‌های جذاب",
+    title: { en: translations.en.projects[3].title, fa: translations.fa.projects[3].title },
+    description: { en: translations.en.projects[3].description, fa: translations.fa.projects[3].description },
     image: "/images/projects/project3.jpg",
     technologies: ["React", "OpenWeather API", "Framer Motion"],
     github: "https://github.com/yourusername/project3",
@@ -31,8 +34,8 @@ export const projects = [
   },
   {
     id: 4,
-    title: "سیستم احراز هویت",
-    description: "سیستم کامل ثبت‌نام، ورود و مدیریت کاربران با امنیت بالا",
+    title: { en: translations.en.projects[4].title, fa: translations.fa.projects[4].title },
+    description: { en: translations.en.projects[4].description, fa: translations.fa.projects[4].description },
     image: "/images/projects/project4.jpg",
     technologies: ["Node.js", "Express", "JWT", "bcrypt", "PostgreSQL"],
     github: "https://github.com/yourusername/project4",
@@ -41,8 +44,8 @@ export const projects = [
   },
   {
     id: 5,
-    title: "وبلاگ شخصی",
-    description: "وبلاگ با قابلیت مدیریت مقالات، کامنت‌گذاری و جستجوی پیشرفته",
+    title: { en: translations.en.projects[5].title, fa: translations.fa.projects[5].title },
+    description: { en: translations.en.projects[5].description, fa: translations.fa.projects[5].description },
     image: "/images/projects/project5.jpg",
     technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
     github: "https://github.com/yourusername/project5",
@@ -51,8 +54,8 @@ export const projects = [
   },
   {
     id: 6,
-    title: "سیستم سفارش کافه گاف",
-    description: "سیستم سفارش‌گیری آنلاین کافه با امکان انتخاب منو و ارسال سفارش",
+    title: { en: translations.en.projects[6].title, fa: translations.fa.projects[6].title },
+    description: { en: translations.en.projects[6].description, fa: translations.fa.projects[6].description },
     image: "/images/projects/cafe-project.jpg",
     technologies: ["React", "JavaScript", "Formspree", "Tailwind CSS"],
     github: null,
@@ -63,8 +66,8 @@ export const projects = [
 ];
 
 export const categories = [
-  { id: "all", name: "همه", icon: "🌟" },
-  { id: "frontend", name: "فرانت‌اند", icon: "🎨" },
-  { id: "backend", name: "بک‌اند", icon: "⚙️" },
-  { id: "fullstack", name: "فول‌استک", icon: "🚀" }
+  { id: "all", name: { en: "All", fa: "همه" }, icon: "🌟" },
+  { id: "frontend", name: { en: "Frontend", fa: "فرانت‌اند" }, icon: "🎨" },
+  { id: "backend", name: { en: "Backend", fa: "بک‌اند" }, icon: "⚙️" },
+  { id: "fullstack", name: { en: "Full Stack", fa: "فول‌استک" }, icon: "🚀" }
 ];

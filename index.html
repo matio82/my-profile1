@@ -1,23 +1,53 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="وب‌سایت شخصی مهدی - توسعه‌دهنده فرانت‌اند و طراح رابط کاربری" />
+    <meta name="description" content="Mahdi's personal website - Frontend developer and UI/UX designer" />
     <meta name="keywords" content="React, Frontend Developer, UI/UX Designer, Portfolio" />
     <meta name="author" content="Mahdi" />
-    
+    <meta name="robots" content="index, follow" />
+
+    <!-- TODO: replace with your real production domain -->
+    <link rel="canonical" href="https://your-domain.com/" />
+
+    <!-- تنظیم فوری زبان/جهت قبل از رندر React، برای جلوگیری از فلش زبان اشتباه -->
+    <script src="/lang-init.js"></script>
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Mahdi - Frontend Developer" />
-    <meta property="og:description" content="وب‌سایت شخصی مهدی - توسعه‌دهنده فرانت‌اند" />
+    <meta property="og:description" content="Mahdi's personal website - Frontend developer" />
     <meta property="og:type" content="website" />
-    
+    <!-- TODO: replace with your real production domain -->
+    <meta property="og:url" content="https://your-domain.com/" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mahdi - Frontend Developer" />
+    <meta name="twitter:description" content="Mahdi's personal website - Frontend developer" />
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <title>Mahdi - Frontend Developer & UI/UX Designer</title>
+
+    <!-- Structured Data (JSON-LD): helps search engines understand this is a person's portfolio site -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahdi",
+      "jobTitle": "Frontend Developer & UI/UX Designer",
+      "url": "https://your-domain.com/",
+      "sameAs": [
+        "https://t.me/Mm_02_08",
+        "https://www.instagram.com/mahdim.100",
+        "https://x.com/boy8_iranian"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

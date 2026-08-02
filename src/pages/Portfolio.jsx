@@ -5,14 +5,18 @@ import ProjectCard from '../components/projects/ProjectCard';
 import ProjectFilters from '../components/projects/ProjectFilters';
 import SectionTitle from '../components/common/SectionTitle';
 import { containerVariants, itemVariants } from '../utils/animations';
+import { useLanguage } from '../hooks/useLanguage.jsx';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState('همه');
+  usePageSEO('seo.portfolio.title', 'seo.portfolio.description');
+  const { language, t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   // استخراج دسته‌بندی‌های یکتا
   const categories = useMemo(() => {
-    const uniqueCategories = ['همه'];
+    const uniqueCategories = ['all'];
     projects.forEach(project => {
       if (project.category && !uniqueCategories.includes(project.category)) {
         uniqueCategories.push(project.category);
@@ -21,28 +25,30 @@ const Portfolio = () => {
     return uniqueCategories;
   }, []);
 
-  // فیلتر پروژه‌ها
+  // فیلتر پروژه‌ها (بر اساس عنوان/توضیحات زبان فعلی)
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
       // فیلتر بر اساس دسته‌بندی
-      const categoryMatch = selectedCategory === 'همه' || project.category === selectedCategory;
+      const categoryMatch = selectedCategory === 'all' || project.category === selectedCategory;
       
       // فیلتر بر اساس جستجو
+      const title = project.title[language] || '';
+      const description = project.description[language] || '';
       const searchMatch = searchQuery === '' || 
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase());
+        title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        description.toLowerCase().includes(searchQuery.toLowerCase());
 
       return categoryMatch && searchMatch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, language]);
 
   // گروه‌بندی پروژه‌های فیلتر شده بر اساس دسته‌بندی
   const groupedProjects = useMemo(() => {
-    if (selectedCategory === 'همه') {
+    if (selectedCategory === 'all') {
       // گروه‌بندی بر اساس دسته‌بندی
       const grouped = {};
       filteredProjects.forEach(project => {
-        const category = project.category || 'دیگر';
+        const category = project.category || 'other';
         if (!grouped[category]) {
           grouped[category] = [];
         }
@@ -68,15 +74,16 @@ const Portfolio = () => {
           className="text-center mb-12"
         >
           <SectionTitle 
-            title="نمونه کارها" 
-            subtitle="پروژه‌های انجام شده"
+            title={t('portfolio.title')} 
+            subtitle={t('portfolio.subtitle')}
+            level="h1"
           />
           
           <motion.p 
             variants={itemVariants}
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4"
           >
-            مجموعه‌ای از پروژه‌های موفق که با تکنولوژی‌های روز دنیا پیاده‌سازی شده‌اند
+            {t('portfolio.description')}
           </motion.p>
         </motion.div>
 
@@ -99,13 +106,13 @@ const Portfolio = () => {
               variants={containerVariants}
             >
               {/* عنوان دسته‌بندی (فقط در حالت "همه") */}
-              {selectedCategory === 'همه' && (
+              {selectedCategory === 'all' && (
                 <motion.h3
                   variants={itemVariants}
                   className="text-2xl font-bold text-gray-800 dark:text-white mb-8 
                            border-r-4 border-blue-500 pr-4"
                 >
-                  {category}
+                  {t(`portfolio.categories.${category}`)}
                 </motion.h3>
               )}
 
@@ -127,7 +134,7 @@ const Portfolio = () => {
                   className="text-center py-12"
                 >
                   <p className="text-gray-500 dark:text-gray-400">
-                    پروژه‌ای در این دسته یافت نشد
+                    {t('portfolio.noProjectsInCategory')}
                   </p>
                 </motion.div>
               )}
@@ -144,10 +151,10 @@ const Portfolio = () => {
           >
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              نتیجه‌ای یافت نشد
+              {t('portfolio.noResultsTitle')}
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
-              لطفاً فیلترها یا عبارت جستجو را تغییر دهید
+              {t('portfolio.noResultsSubtitle')}
             </p>
           </motion.div>
         )}

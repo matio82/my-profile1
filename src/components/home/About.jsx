@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const About = () => {
+  const { t } = useLanguage();
   const skills = [
     {
       category: 'Frontend Development',
@@ -35,8 +37,8 @@ const About = () => {
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/50">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="درباره من"
-          subtitle="با تخصص‌ها و مهارت‌های من آشنا شوید"
+          title={t('about.title')}
+          subtitle={t('about.subtitle')}
         />
 
         <motion.div
