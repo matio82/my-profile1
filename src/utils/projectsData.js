@@ -17,7 +17,7 @@ export const projects = [
     description: { en: translations.en.projects[2].description, fa: translations.fa.projects[2].description },
     image: "/images/projects/project2.jpg",
     technologies: ["React", "Chart.js", "Material-UI", "Firebase"],
-    github: "https://github.com/yourusername/project2",
+    github: "https://github.com/matio82/project2",
     demo: "https://project2.demo.com",
     category: "frontend"
   },
@@ -27,7 +27,7 @@ export const projects = [
     description: { en: translations.en.projects[3].description, fa: translations.fa.projects[3].description },
     image: "/images/projects/project3.jpg",
     technologies: ["React", "OpenWeather API", "Framer Motion"],
-    github: "https://github.com/yourusername/project3",
+    github: "https://github.com/matio82/project3",
     demo: "https://project3.demo.com",
     category: "frontend"
   },
@@ -37,7 +37,7 @@ export const projects = [
     description: { en: translations.en.projects[4].description, fa: translations.fa.projects[4].description },
     image: "/images/projects/project4.jpg",
     technologies: ["Node.js", "Express", "JWT", "bcrypt", "PostgreSQL"],
-    github: "https://github.com/yourusername/project4",
+    github: "https://github.com/matio82/project4",
     demo: "https://project4.demo.com",
     category: "backend"
   },
@@ -47,7 +47,7 @@ export const projects = [
     description: { en: translations.en.projects[5].description, fa: translations.fa.projects[5].description },
     image: "/images/projects/project5.jpg",
     technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/yourusername/project5",
+    github: "https://github.com/matio82/project5",
     demo: "https://project5.demo.com",
     category: "fullstack"
   },
