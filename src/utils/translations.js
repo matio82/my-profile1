@@ -96,9 +96,8 @@ export const translations = {
       4: { title: 'Authentication System', description: 'A complete sign-up, login, and user management system built with strong security' },
       5: { title: 'Personal Blog', description: 'A blog with article management, commenting, and advanced search' },
       6: { title: 'Café Gaf Ordering System', description: 'An online ordering system for a café, with menu selection and order submission' },
+      7: { title: 'Online Store (Template)', description: 'A storefront demo showing the product catalog and cart UI — replace with your real project' },
     },
-<<<<<<< HEAD
-=======
     seo: {
       home: {
         title: 'Mahdi - Frontend Developer & UI/UX Designer',
@@ -118,7 +117,6 @@ export const translations = {
       description: "The page you're looking for doesn't exist or has been moved.",
       backHome: 'Back to Home',
     },
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   },
   fa: {
     siteMeta: {
@@ -216,9 +214,8 @@ export const translations = {
       4: { title: 'سیستم احراز هویت', description: 'سیستم کامل ثبت‌نام، ورود و مدیریت کاربران با امنیت بالا' },
       5: { title: 'وبلاگ شخصی', description: 'وبلاگ با قابلیت مدیریت مقالات، کامنت‌گذاری و جستجوی پیشرفته' },
       6: { title: 'سیستم سفارش کافه گاف', description: 'سیستم سفارش‌گیری آنلاین کافه با امکان انتخاب منو و ارسال سفارش' },
+      7: { title: 'فروشگاه آنلاین (قالب نمونه)', description: 'یه نمونه ویترین محصولات و سبد خرید - با پروژه واقعی خودتون جایگزینش کنید' },
     },
-<<<<<<< HEAD
-=======
     seo: {
       home: {
         title: 'مهدی - توسعه‌دهنده فرانت‌اند و طراح UI/UX',
@@ -238,6 +235,5 @@ export const translations = {
       description: 'صفحه‌ای که دنبالش می‌گردید وجود نداره یا جابه‌جا شده.',
       backHome: 'بازگشت به خانه',
     },
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   },
 };

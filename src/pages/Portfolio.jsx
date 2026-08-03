@@ -6,18 +6,30 @@ import ProjectFilters from '../components/projects/ProjectFilters';
 import SectionTitle from '../components/common/SectionTitle';
 import { containerVariants, itemVariants } from '../utils/animations';
 import { useLanguage } from '../hooks/useLanguage.jsx';
-<<<<<<< HEAD
-
-const Portfolio = () => {
-=======
 import { usePageSEO } from '../hooks/usePageSEO';
+import { useJsonLd } from '../hooks/useJsonLd';
 
 const Portfolio = () => {
   usePageSEO('seo.portfolio.title', 'seo.portfolio.description');
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   const { language, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // داده ساختاریافته (JSON-LD) برای فهرست کامل پروژه‌ها - کمک به نمایش بهتر توی نتایج گوگل
+  useJsonLd('portfolio-jsonld', {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: project.title[language],
+        description: project.description[language],
+        image: project.image,
+      },
+    })),
+  });
 
   // استخراج دسته‌بندی‌های یکتا
   const categories = useMemo(() => {
@@ -81,10 +93,7 @@ const Portfolio = () => {
           <SectionTitle 
             title={t('portfolio.title')} 
             subtitle={t('portfolio.subtitle')}
-<<<<<<< HEAD
-=======
             level="h1"
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
           />
           
           <motion.p 

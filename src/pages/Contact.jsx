@@ -9,15 +9,10 @@ import {
 import SectionTitle from '../components/common/SectionTitle';
 import { BsTwitterX } from 'react-icons/bs';
 import { useLanguage } from '../hooks/useLanguage.jsx';
-<<<<<<< HEAD
-
-const Contact = () => {
-=======
 import { usePageSEO } from '../hooks/usePageSEO';
 
 const Contact = () => {
   usePageSEO('seo.contact.title', 'seo.contact.description');
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
@@ -101,10 +96,7 @@ const Contact = () => {
         <SectionTitle
           title={t('contact.title')}
           subtitle={t('contact.subtitle')}
-<<<<<<< HEAD
-=======
           level="h1"
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
         />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">

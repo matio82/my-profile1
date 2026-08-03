@@ -5,11 +5,7 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const FeaturedProjects = () => {
-<<<<<<< HEAD
-  const { language, t } = useLanguage();
-=======
   const { t } = useLanguage();
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   // تعریف دستی داده پروژه کافه
   const featuredProjects = [
     {

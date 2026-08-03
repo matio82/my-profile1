@@ -7,9 +7,9 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ProjectDetail from './pages/ProjectDetail';
 import { useTheme } from './hooks/useTheme.jsx';
 import HexagonalBackground from './components/HexagonalBackground';
-import CafeProject from "./components/projects/CafeProject";
 
 function App() {
   const { theme } = useTheme();
@@ -37,7 +37,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects/cafe" element={<CafeProject />} />
+            <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

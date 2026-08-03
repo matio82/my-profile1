@@ -15,17 +15,19 @@ const ProjectCard = ({ project }) => {
                  hover:shadow-2xl transition-all duration-300"
     >
       {/* تصویر پروژه */}
-      <div className="relative h-48 overflow-hidden group">
+      <div className="relative h-48 overflow-hidden group bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
         <img
           src={project.image}
           alt={title}
-<<<<<<< HEAD
-=======
           loading="lazy"
->>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
+          onError={(e) => { e.target.style.display = 'none'; }}
           className="w-full h-full object-cover transform group-hover:scale-110
-                     transition-transform duration-500"
+                     transition-transform duration-500 absolute inset-0"
         />
+        {/* fallback: اگه عکس پیدا نشد، این متن به‌جای آیکون شکسته دیده می‌شه */}
+        <span className="text-white text-4xl font-bold opacity-80 z-0">
+          {title?.[0]?.toUpperCase()}
+        </span>
 
         {/* Overlay روی تصویر */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent
