@@ -31,19 +31,7 @@ const Navbar = () => { // ⬅️ props رو حذف کن
 
   // ⬅️ اضافه کردن لاگ برای تست
   const handleThemeClick = () => {
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('🖱️ کلیک روی دکمه تم در Navbar!');
-    console.log('📌 تم فعلی:', theme);
-    console.log('📌 localStorage قبل:', localStorage.getItem('theme'));
-    
     toggleTheme();
-    
-    setTimeout(() => {
-      console.log('✅ بعد از toggleTheme:');
-      console.log('   - تم جدید:', localStorage.getItem('theme'));
-      console.log('   - کلاس dark:', document.documentElement.classList.contains('dark'));
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    }, 100);
   };
 
   return (

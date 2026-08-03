@@ -6,8 +6,15 @@ import ProjectFilters from '../components/projects/ProjectFilters';
 import SectionTitle from '../components/common/SectionTitle';
 import { containerVariants, itemVariants } from '../utils/animations';
 import { useLanguage } from '../hooks/useLanguage.jsx';
+<<<<<<< HEAD
 
 const Portfolio = () => {
+=======
+import { usePageSEO } from '../hooks/usePageSEO';
+
+const Portfolio = () => {
+  usePageSEO('seo.portfolio.title', 'seo.portfolio.description');
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   const { language, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -74,6 +81,10 @@ const Portfolio = () => {
           <SectionTitle 
             title={t('portfolio.title')} 
             subtitle={t('portfolio.subtitle')}
+<<<<<<< HEAD
+=======
+            level="h1"
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
           />
           
           <motion.p 

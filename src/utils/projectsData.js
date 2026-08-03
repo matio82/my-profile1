@@ -1,5 +1,9 @@
 import { translations } from './translations';
 
+<<<<<<< HEAD
+=======
+// ⚠️ TODO: لینک‌های گیت‌هاب پروژه‌ها (github) الان placeholder هستن ("yourusername") — قبل از پابلیش با آدرس واقعی ریپوهاتون جایگزین کنید
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
 export const projects = [
   {
     id: 1,

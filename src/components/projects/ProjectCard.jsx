@@ -19,6 +19,10 @@ const ProjectCard = ({ project }) => {
         <img
           src={project.image}
           alt={title}
+<<<<<<< HEAD
+=======
+          loading="lazy"
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
           className="w-full h-full object-cover transform group-hover:scale-110
                      transition-transform duration-500"
         />

@@ -64,6 +64,15 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [orderError, setOrderError] = useState(false);
 
+  // این صفحه یک نمونه‌کار مستقل با محتوای فارسی ثابت است و از سوییچ زبان سایت مستثناست
+  useEffect(() => {
+    document.title = 'کافه گاف - سیستم سفارش آنلاین';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'نمونه‌کار: سیستم سفارش آنلاین کافه با امکان انتخاب منو و ثبت سفارش');
+    }
+  }, []);
+
   useEffect(() => {
     if (currentPage === 'order') {
       const timer = setTimeout(() => {

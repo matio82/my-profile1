@@ -97,6 +97,28 @@ export const translations = {
       5: { title: 'Personal Blog', description: 'A blog with article management, commenting, and advanced search' },
       6: { title: 'Café Gaf Ordering System', description: 'An online ordering system for a café, with menu selection and order submission' },
     },
+<<<<<<< HEAD
+=======
+    seo: {
+      home: {
+        title: 'Mahdi - Frontend Developer & UI/UX Designer',
+        description: "Mahdi's personal portfolio - frontend developer specializing in React, building modern, user-friendly websites.",
+      },
+      portfolio: {
+        title: 'Portfolio | Mahdi - Frontend Developer',
+        description: 'A collection of web development projects by Mahdi, including full-stack apps, dashboards, and e-commerce stores built with React and Node.js.',
+      },
+      contact: {
+        title: 'Contact | Mahdi - Frontend Developer',
+        description: 'Get in touch with Mahdi for frontend development and UI/UX design collaborations and projects.',
+      },
+    },
+    notFound: {
+      title: 'Page Not Found',
+      description: "The page you're looking for doesn't exist or has been moved.",
+      backHome: 'Back to Home',
+    },
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   },
   fa: {
     siteMeta: {
@@ -195,5 +217,27 @@ export const translations = {
       5: { title: 'وبلاگ شخصی', description: 'وبلاگ با قابلیت مدیریت مقالات، کامنت‌گذاری و جستجوی پیشرفته' },
       6: { title: 'سیستم سفارش کافه گاف', description: 'سیستم سفارش‌گیری آنلاین کافه با امکان انتخاب منو و ارسال سفارش' },
     },
+<<<<<<< HEAD
+=======
+    seo: {
+      home: {
+        title: 'مهدی - توسعه‌دهنده فرانت‌اند و طراح UI/UX',
+        description: 'نمونه‌کار شخصی مهدی - توسعه‌دهنده فرانت‌اند با تخصص در React، طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند',
+      },
+      portfolio: {
+        title: 'نمونه کارها | مهدی - توسعه‌دهنده فرانت‌اند',
+        description: 'مجموعه‌ای از پروژه‌های توسعه وب توسط مهدی، شامل اپلیکیشن‌های فول‌استک، داشبورد و فروشگاه آنلاین با React و Node.js',
+      },
+      contact: {
+        title: 'تماس با من | مهدی - توسعه‌دهنده فرانت‌اند',
+        description: 'برای همکاری و پروژه‌های توسعه فرانت‌اند و طراحی UI/UX با مهدی در ارتباط باشید',
+      },
+    },
+    notFound: {
+      title: 'صفحه پیدا نشد',
+      description: 'صفحه‌ای که دنبالش می‌گردید وجود نداره یا جابه‌جا شده.',
+      backHome: 'بازگشت به خانه',
+    },
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   },
 };

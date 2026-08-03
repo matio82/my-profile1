@@ -5,7 +5,11 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const FeaturedProjects = () => {
+<<<<<<< HEAD
   const { language, t } = useLanguage();
+=======
+  const { t } = useLanguage();
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   // تعریف دستی داده پروژه کافه
   const featuredProjects = [
     {
@@ -55,7 +59,7 @@ const FeaturedProjects = () => {
             >
               {/* تصویر */}
               <div className="relative h-48 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
 

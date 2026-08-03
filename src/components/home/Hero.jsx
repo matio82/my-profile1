@@ -34,6 +34,7 @@ const Hero = () => {
             className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
             MAHDI
+            <span className="sr-only"> — {t('hero.subtitle')}</span>
           </motion.h1>
 
           <motion.p

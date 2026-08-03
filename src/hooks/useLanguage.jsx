@@ -24,6 +24,7 @@ export const LanguageProvider = ({ children }) => {
     localStorage.setItem('language', language);
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr';
+<<<<<<< HEAD
 
     document.title = t('siteMeta.title');
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -31,6 +32,8 @@ export const LanguageProvider = ({ children }) => {
       metaDescription.setAttribute('content', t('siteMeta.description'));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+=======
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   }, [language]);
 
   const toggleLanguage = () => {

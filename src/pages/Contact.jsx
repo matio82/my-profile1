@@ -9,13 +9,21 @@ import {
 import SectionTitle from '../components/common/SectionTitle';
 import { BsTwitterX } from 'react-icons/bs';
 import { useLanguage } from '../hooks/useLanguage.jsx';
+<<<<<<< HEAD
 
 const Contact = () => {
+=======
+import { usePageSEO } from '../hooks/usePageSEO';
+
+const Contact = () => {
+  usePageSEO('seo.contact.title', 'seo.contact.description');
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    _gotcha: '' // فیلد تله برای بات‌ها؛ کاربر واقعی هرگز اینو پر نمی‌کنه
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,11 +38,18 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // اگه فیلد تله پر شده باشه یعنی احتمالاً یه بات فرم رو پر کرده، ساکت رد می‌کنیم
+    if (formData._gotcha) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://formspree.io/f/mblqrpzr', {
+      const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mblqrpzr';
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -44,11 +59,12 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', _gotcha: '' });
       } else {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Contact form submission failed:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -85,6 +101,10 @@ const Contact = () => {
         <SectionTitle
           title={t('contact.title')}
           subtitle={t('contact.subtitle')}
+<<<<<<< HEAD
+=======
+          level="h1"
+>>>>>>> 3b0d91b88cc1854f75fc962963c58609507843a4
         />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -100,6 +120,18 @@ const Contact = () => {
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* فیلد تله ضد اسپم - برای کاربر واقعی مخفیه */}
+              <input
+                type="text"
+                name="_gotcha"
+                value={formData._gotcha}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+              />
+
               {/* نام */}
               <div>
                 <label 
@@ -115,6 +147,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength={100}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                            focus:ring-2 focus:ring-blue-500 focus:border-transparent
@@ -138,6 +171,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  maxLength={254}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                            focus:ring-2 focus:ring-blue-500 focus:border-transparent
@@ -160,6 +194,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={5000}
                   rows="5"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-white
