@@ -2,7 +2,7 @@
 
 A personal portfolio website for a frontend developer & UI/UX designer, built with React, Vite, and Tailwind CSS. Fully bilingual (English / Persian) with automatic RTL/LTR layout switching, and a light/dark theme toggle.
 
-🔗 **Live site:** _add your deployed URL here_
+🔗 **Live site:** [mahdimotee.ir](https://mahdimotee.ir)
 
 ## Features
 
@@ -49,12 +49,11 @@ cp .env.example .env
 
 ## Before deploying
 
-A few placeholders need to be replaced with real values:
+Live at **mahdimotee.ir** ✅ — `index.html`, `robots.txt`, and `sitemap.xml` already point to this domain.
 
-- `index.html` — `canonical` link, `og:url`, and the JSON-LD `url` (currently `your-domain.com`)
-- `public/robots.txt` — the `Sitemap:` line
-- `public/sitemap.xml` — all `<loc>` URLs
-- `src/utils/projectsData.js` / `src/components/home/FeaturedProjects.jsx` — the `github` links currently point to placeholder `yourusername` URLs
+One placeholder still needs a real value:
+
+- `src/components/home/FeaturedProjects.jsx` — the `github` link for the cafe project currently points to a placeholder `yourusername` URL
 
 ## Project Structure
 

@@ -91,24 +91,19 @@ export const translations = {
     },
     projects: {
       1: { title: 'Online Store', description: 'A complete e-commerce store built with React and Node.js, featuring product management, a shopping cart, and online payments' },
-      2: { title: 'Admin Dashboard', description: 'An advanced admin panel with charts and analytical reports for business management' },
-      3: { title: 'Weather App', description: 'Displays live weather conditions via an API, with a clean design and engaging animations' },
-      4: { title: 'Authentication System', description: 'A complete sign-up, login, and user management system built with strong security' },
-      5: { title: 'Personal Blog', description: 'A blog with article management, commenting, and advanced search' },
       6: { title: 'Café Gaf Ordering System', description: 'An online ordering system for a café, with menu selection and order submission' },
-      7: { title: 'Online Store (Template)', description: 'A storefront demo showing the product catalog and cart UI — replace with your real project' },
     },
     seo: {
       home: {
-        title: 'Mahdi - Frontend Developer & UI/UX Designer',
+        title: 'Mahdi Motee',
         description: "Mahdi's personal portfolio - frontend developer specializing in React, building modern, user-friendly websites.",
       },
       portfolio: {
-        title: 'Portfolio | Mahdi - Frontend Developer',
+        title: 'Mahdi Motee',
         description: 'A collection of web development projects by Mahdi, including full-stack apps, dashboards, and e-commerce stores built with React and Node.js.',
       },
       contact: {
-        title: 'Contact | Mahdi - Frontend Developer',
+        title: 'Mahdi Motee',
         description: 'Get in touch with Mahdi for frontend development and UI/UX design collaborations and projects.',
       },
     },
@@ -209,24 +204,19 @@ export const translations = {
     },
     projects: {
       1: { title: 'فروشگاه آنلاین', description: 'یک فروشگاه کامل با React و Node.js با قابلیت مدیریت محصولات، سبد خرید و پرداخت آنلاین' },
-      2: { title: 'داشبورد مدیریتی', description: 'پنل ادمین پیشرفته با نمودارها و گزارش‌های تحلیلی برای مدیریت کسب‌وکار' },
-      3: { title: 'اپلیکیشن آب‌وهوا', description: 'نمایش وضعیت آب‌وهوا با استفاده از API با طراحی زیبا و انیمیشن‌های جذاب' },
-      4: { title: 'سیستم احراز هویت', description: 'سیستم کامل ثبت‌نام، ورود و مدیریت کاربران با امنیت بالا' },
-      5: { title: 'وبلاگ شخصی', description: 'وبلاگ با قابلیت مدیریت مقالات، کامنت‌گذاری و جستجوی پیشرفته' },
       6: { title: 'سیستم سفارش کافه گاف', description: 'سیستم سفارش‌گیری آنلاین کافه با امکان انتخاب منو و ارسال سفارش' },
-      7: { title: 'فروشگاه آنلاین (قالب نمونه)', description: 'یه نمونه ویترین محصولات و سبد خرید - با پروژه واقعی خودتون جایگزینش کنید' },
     },
     seo: {
       home: {
-        title: 'مهدی - توسعه‌دهنده فرانت‌اند و طراح UI/UX',
+        title: 'مهدی مطیع',
         description: 'نمونه‌کار شخصی مهدی - توسعه‌دهنده فرانت‌اند با تخصص در React، طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند',
       },
       portfolio: {
-        title: 'نمونه کارها | مهدی - توسعه‌دهنده فرانت‌اند',
+        title: 'مهدی مطیع',
         description: 'مجموعه‌ای از پروژه‌های توسعه وب توسط مهدی، شامل اپلیکیشن‌های فول‌استک، داشبورد و فروشگاه آنلاین با React و Node.js',
       },
       contact: {
-        title: 'تماس با من | مهدی - توسعه‌دهنده فرانت‌اند',
+        title: 'مهدی مطیع',
         description: 'برای همکاری و پروژه‌های توسعه فرانت‌اند و طراحی UI/UX با مهدی در ارتباط باشید',
       },
     },

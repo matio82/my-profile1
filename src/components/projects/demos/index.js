@@ -25,6 +25,5 @@ import { lazy } from 'react';
 
 export const projectDemos = {
   cafe: lazy(() => import('./cafe/CafeProject')),
-  'project-2': lazy(() => import('./project-2/Project2')),
-  'project-3': lazy(() => import('./project-3/shop')),
+  eshop: lazy(() => import('./eshop/EshopDemo')),
 };

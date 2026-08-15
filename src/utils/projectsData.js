@@ -1,56 +1,16 @@
 import { translations } from './translations';
 
-// ⚠️ TODO: لینک‌های گیت‌هاب پروژه‌ها (github) الان placeholder هستن ("yourusername") — قبل از پابلیش با آدرس واقعی ریپوهاتون جایگزین کنید
 export const projects = [
   {
     id: 1,
-    title: { en: translations.en.projects[1].title, fa: translations.fa.projects[1].title },
+    title: { en: 'MartNeo - Online Store', fa: 'مارت‌نئو - فروشگاه آنلاین' },
     description: { en: translations.en.projects[1].description, fa: translations.fa.projects[1].description },
     image: "/images/projects/project1.jpg",
     technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-    github: "https://github.com/yourusername/project1",
-    demo: "https://project1.demo.com",
-    category: "fullstack"
-  },
-  {
-    id: 2,
-    title: { en: translations.en.projects[2].title, fa: translations.fa.projects[2].title },
-    description: { en: translations.en.projects[2].description, fa: translations.fa.projects[2].description },
-    image: "/images/projects/project2.jpg",
-    technologies: ["React", "Chart.js", "Material-UI", "Firebase"],
-    github: "https://github.com/yourusername/project2",
-    demo: "https://project2.demo.com",
-    category: "frontend"
-  },
-  {
-    id: 3,
-    title: { en: translations.en.projects[3].title, fa: translations.fa.projects[3].title },
-    description: { en: translations.en.projects[3].description, fa: translations.fa.projects[3].description },
-    image: "/images/projects/project3.jpg",
-    technologies: ["React", "OpenWeather API", "Framer Motion"],
-    github: "https://github.com/yourusername/project3",
-    demo: "https://project3.demo.com",
-    category: "frontend"
-  },
-  {
-    id: 4,
-    title: { en: translations.en.projects[4].title, fa: translations.fa.projects[4].title },
-    description: { en: translations.en.projects[4].description, fa: translations.fa.projects[4].description },
-    image: "/images/projects/project4.jpg",
-    technologies: ["Node.js", "Express", "JWT", "bcrypt", "PostgreSQL"],
-    github: "https://github.com/yourusername/project4",
-    demo: "https://project4.demo.com",
-    category: "backend"
-  },
-  {
-    id: 5,
-    title: { en: translations.en.projects[5].title, fa: translations.fa.projects[5].title },
-    description: { en: translations.en.projects[5].description, fa: translations.fa.projects[5].description },
-    image: "/images/projects/project5.jpg",
-    technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/yourusername/project5",
-    demo: "https://project5.demo.com",
-    category: "fullstack"
+    github: "https://github.com/matio82/e-shop-frontend",
+    demo: "/projects/eshop",
+    category: "fullstack",
+    isInternal: true
   },
   {
     id: 6,
@@ -61,18 +21,6 @@ export const projects = [
     github: null,
     demo: "/projects/cafe",
     category: "fullstack",
-    isInternal: true
-  },
-  {
-    id: 7,
-    // ⚠️ این یه TEMPLATE هست - جزئیاتش (عکس، تکنولوژی‌ها) رو با پروژه واقعی خودتون عوض کنید
-    title: { en: translations.en.projects[7].title, fa: translations.fa.projects[7].title },
-    description: { en: translations.en.projects[7].description, fa: translations.fa.projects[7].description },
-    image: "/images/projects/project2-store.jpg",
-    technologies: ["React", "Tailwind CSS"],
-    github: null,
-    demo: "/projects/project-2",
-    category: "frontend",
     isInternal: true
   }
 ];
