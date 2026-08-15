@@ -1,0 +1,5 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+GENERATE_SOURCEMAP=false
+DISABLE_ESLINT_PLUGIN=true

@@ -1,0 +1,294 @@
+/* frontend/src/pages/Checkout.css */
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  direction: rtl;
+}
+
+.checkout-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 30px;
+}
+
+/* فرم */
+.checkout-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* روش پرداخت */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.payment-option:hover {
+  border-color: #4CAF50;
+}
+
+.payment-option.selected {
+  border-color: #4CAF50;
+  background: #f0fff0;
+}
+
+.payment-option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-option input {
+  display: none;
+}
+
+.payment-icon {
+  font-size: 24px;
+}
+
+.payment-info strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.payment-info small {
+  color: #888;
+  font-size: 12px;
+}
+
+/* خلاصه سفارش */
+.order-summary {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.order-summary h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.summary-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.item-qty {
+  font-size: 12px;
+  color: #888;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #4CAF50;
+  font-size: 13px;
+}
+
+.summary-totals {
+  padding-top: 15px;
+  border-top: 2px solid #eee;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.summary-row.total {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 2px dashed #eee;
+}
+
+.free-shipping {
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.free-shipping-note {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.submit-order-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+
+.submit-order-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.submit-order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* صفحه خالی */
+.checkout-empty {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.checkout-empty h2 {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.checkout-empty button {
+  padding: 12px 30px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .checkout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: relative;
+    top: 0;
+  }
+}
+

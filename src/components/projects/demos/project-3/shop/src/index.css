@@ -1,0 +1,502 @@
+/* ========================================
+   NEXUS AI STORE - MAIN STYLES
+   برای پروژه Mart Neo
+   ======================================== */
+
+/* ===== IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  /* رنگ‌های نئونی */
+  --neon-blue: 195 100% 50%;
+  --neon-pink: 330 100% 60%;
+  --neon-purple: 270 100% 60%;
+  --neon-cyan: 180 100% 50%;
+  
+  /* رنگ‌های پس‌زمینه تاریک */
+  --void: 220 20% 5%;
+  --background: 220 20% 6%;
+  --foreground: 210 40% 98%;
+  
+  /* رنگ‌های کارت و سطوح */
+  --card: 220 20% 8%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 220 20% 8%;
+  --popover-foreground: 210 40% 98%;
+  
+  /* رنگ‌های اصلی */
+  --primary: 195 100% 50%;
+  --primary-foreground: 220 20% 5%;
+  
+  --secondary: 220 15% 15%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 220 15% 15%;
+  --muted-foreground: 215 20% 55%;
+  
+  --accent: 270 100% 60%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 85% 60%;
+  --destructive-foreground: 210 40% 98%;
+  
+  /* حاشیه و ورودی */
+  --border: 220 15% 20%;
+  --input: 220 15% 20%;
+  --ring: 195 100% 50%;
+  
+  /* شعاع گوشه‌ها */
+  --radius: 0.75rem;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Vazirmatn', system-ui, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+  
+  /* پس‌زمینه گرادیانت */
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--neon-blue) / 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, hsl(var(--neon-purple) / 0.1), transparent);
+  background-attachment: fixed;
+}
+
+/* ===== SCROLLBAR CUSTOM ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--void));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--neon-pink)), hsl(var(--neon-blue)));
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: hsl(var(--neon-blue) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* ===== LAYER: BASE ===== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* ===== LAYER: COMPONENTS ===== */
+@layer components {
+  
+  /* ----- Glass Effect ----- */
+  .glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .glass-card {
+    background: hsl(var(--card) / 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    background: hsl(var(--card) / 0.6);
+    border-color: hsl(var(--neon-blue) / 0.3);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-blue) / 0.1),
+      0 20px 40px hsl(var(--void) / 0.5);
+  }
+  
+  /* ----- Neon Glow Effects ----- */
+  .glow-blue {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-blue) / 0.5),
+      0 0 40px hsl(var(--neon-blue) / 0.3),
+      0 0 60px hsl(var(--neon-blue) / 0.1);
+  }
+  
+  .glow-pink {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-pink) / 0.5),
+      0 0 40px hsl(var(--neon-pink) / 0.3),
+      0 0 60px hsl(var(--neon-pink) / 0.1);
+  }
+  
+  .glow-purple {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-purple) / 0.5),
+      0 0 40px hsl(var(--neon-purple) / 0.3),
+      0 0 60px hsl(var(--neon-purple) / 0.1);
+  }
+  
+  /* ----- Neon Text ----- */
+  .text-glow {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 40px currentColor;
+  }
+  
+  .text-glow-blue {
+    color: hsl(var(--neon-blue));
+    text-shadow: 
+      0 0 10px hsl(var(--neon-blue) / 0.8),
+      0 0 20px hsl(var(--neon-blue) / 0.5),
+      0 0 40px hsl(var(--neon-blue) / 0.3);
+  }
+  
+  .text-glow-pink {
+    color: hsl(var(--neon-pink));
+    text-shadow: 
+      0 0 10px hsl(var(--neon-pink) / 0.8),
+      0 0 20px hsl(var(--neon-pink) / 0.5),
+      0 0 40px hsl(var(--neon-pink) / 0.3);
+  }
+  
+  /* ----- Gradient Backgrounds ----- */
+  .bg-gradient-neon {
+    background: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-pink)));
+  }
+  
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+  }
+  
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, 
+      hsl(var(--void)) 0%, 
+      hsl(var(--background)) 50%, 
+      hsl(var(--void)) 100%
+    );
+  }
+  
+  /* ----- Gradient Text ----- */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-pink)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-purple {
+    background: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-blue)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* ----- Buttons ----- */
+  .btn-neon {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    color: hsl(var(--foreground));
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-neon:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 0 20px hsl(var(--neon-blue) / 0.5),
+      0 0 40px hsl(var(--neon-blue) / 0.3);
+  }
+  
+  .btn-neon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .btn-neon:hover::before {
+    left: 100%;
+  }
+  
+  .btn-outline-neon {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    background: transparent;
+    color: hsl(var(--neon-blue));
+    border: 2px solid hsl(var(--neon-blue));
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-neon:hover {
+    background: hsl(var(--neon-blue) / 0.1);
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+  
+  /* ----- Cards ----- */
+  .card-neon {
+    background: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card-neon:hover {
+    border-color: hsl(var(--neon-blue) / 0.5);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-blue) / 0.1),
+      inset 0 0 30px hsl(var(--neon-blue) / 0.05);
+  }
+  
+  /* ----- Badges ----- */
+  .badge-neon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    color: hsl(var(--foreground));
+  }
+  
+  .badge-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    background: hsl(var(--neon-blue) / 0.1);
+    color: hsl(var(--neon-blue));
+    border: 1px solid hsl(var(--neon-blue) / 0.3);
+  }
+  
+  /* ----- Input Fields ----- */
+  .input-neon {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    color: hsl(var(--foreground));
+    transition: all 0.3s ease;
+  }
+  
+  .input-neon:focus {
+    outline: none;
+    border-color: hsl(var(--neon-blue));
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.2);
+  }
+  
+  .input-neon::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+  
+  /* ----- Dividers ----- */
+  .divider-neon {
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--neon-blue) / 0.5), 
+      hsl(var(--neon-pink) / 0.5), 
+      transparent
+    );
+  }
+  
+  /* ----- Loading Spinner ----- */
+  .spinner-neon {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid hsl(var(--border));
+    border-top-color: hsl(var(--neon-blue));
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* ----- Grid Pattern Background ----- */
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  /* ----- Animated Border ----- */
+  .border-animated {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+  
+  .border-animated::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    background: linear-gradient(45deg, 
+      hsl(var(--neon-blue)), 
+      hsl(var(--neon-purple)), 
+      hsl(var(--neon-pink)), 
+      hsl(var(--neon-blue))
+    );
+    background-size: 300% 300%;
+    animation: gradient-rotate 3s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .border-animated:hover::before {
+    opacity: 1;
+  }
+  
+  @keyframes gradient-rotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* ===== LAYER: UTILITIES ===== */
+@layer utilities {
+  
+  /* ----- Animation Delays ----- */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+  
+  /* ----- Backdrop Blur ----- */
+  .backdrop-blur-xs { backdrop-filter: blur(2px); }
+  .backdrop-blur-3xl { backdrop-filter: blur(64px); }
+  
+  /* ----- Text Balance ----- */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* ----- Hide Scrollbar ----- */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* ----- Perspective ----- */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  /* ----- Preserve 3D ----- */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* ===== SWIPER CUSTOMIZATION ===== */
+.swiper-button-next,
+.swiper-button-prev {
+  color: hsl(var(--neon-blue)) !important;
+  background: hsl(var(--card) / 0.8) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(10px);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: hsl(var(--neon-blue) / 0.2) !important;
+  box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+}
+
+.swiper-pagination-bullet {
+  background: hsl(var(--muted-foreground)) !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: hsl(var(--neon-blue)) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(10px);
+  }
+}

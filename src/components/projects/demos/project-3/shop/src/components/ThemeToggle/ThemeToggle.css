@@ -1,0 +1,229 @@
+/* ========== Theme Toggle Button ========== */
+.theme-toggle {
+  position: relative;
+  width: 70px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تم تاریک - آسمان شب */
+.theme-toggle--dark .toggle-track {
+  background: linear-gradient(180deg, #0d1b2a 0%, #1a365d 50%, #2d3748 100%);
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  box-shadow: 
+    0 0 15px rgba(0, 234, 255, 0.2),
+    inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* تم روشن - آسمان روز */
+.theme-toggle--light .toggle-track {
+  background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #E0F7FA 100%);
+  border: 2px solid rgba(255, 200, 100, 0.5);
+  box-shadow: 
+    0 0 15px rgba(255, 200, 100, 0.3),
+    inset 0 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* دکمه (ماه/خورشید) */
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.theme-toggle--dark .toggle-thumb {
+  left: 3px;
+  background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d0 100%);
+  box-shadow: 
+    0 0 10px rgba(245, 245, 220, 0.5),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle--light .toggle-thumb {
+  left: calc(100% - 31px);
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  box-shadow: 
+    0 0 20px rgba(255, 200, 0, 0.6),
+    0 0 40px rgba(255, 150, 0, 0.3);
+}
+
+/* آیکون‌ها */
+.toggle-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.5) rotate(-180deg);
+}
+
+.toggle-icon.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.moon-icon {
+  color: #4a5568;
+}
+
+.sun-icon {
+  color: #744210;
+}
+
+/* ستاره‌ها (تم تاریک) */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.theme-toggle--dark .stars {
+  opacity: 1;
+}
+
+.star {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 8px;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 6px;
+  right: 10px;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 12px;
+  right: 20px;
+  font-size: 6px;
+  animation-delay: 0.5s;
+}
+
+.star-3 {
+  bottom: 8px;
+  right: 8px;
+  font-size: 7px;
+  animation-delay: 1s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ابرها (تم روشن) */
+.clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.theme-toggle--light .clouds {
+  opacity: 1;
+}
+
+.cloud {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  animation: float-cloud 3s ease-in-out infinite;
+}
+
+.cloud-1 {
+  top: 4px;
+  left: 8px;
+  animation-delay: 0s;
+}
+
+.cloud-2 {
+  bottom: 4px;
+  left: 16px;
+  font-size: 10px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float-cloud {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
+/* Hover Effects */
+.theme-toggle:hover .toggle-track {
+  transform: scale(1.05);
+}
+
+.theme-toggle:hover .toggle-thumb {
+  transform: scale(1.1);
+}
+
+.theme-toggle--dark:hover .toggle-thumb {
+  box-shadow: 
+    0 0 15px rgba(245, 245, 220, 0.7),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle--light:hover .toggle-thumb {
+  box-shadow: 
+    0 0 25px rgba(255, 200, 0, 0.8),
+    0 0 50px rgba(255, 150, 0, 0.4);
+}
+
+/* Focus States */
+.theme-toggle:focus-visible .toggle-track {
+  outline: 2px solid var(--color-primary, #00eaff);
+  outline-offset: 3px;
+}
+
+/* Transitioning State */
+.theme-toggle.transitioning .toggle-thumb {
+  transition-duration: 0.5s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 60px;
+    height: 32px;
+  }
+  
+  .toggle-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .theme-toggle--light .toggle-thumb {
+    left: calc(100% - 27px);
+  }
+  
+  .toggle-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
