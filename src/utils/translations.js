@@ -24,6 +24,12 @@ export const translations = {
       title: 'About Me',
       subtitle: 'Get to know my expertise and skills',
     },
+    articles: {
+      title: 'Articles',
+      subtitle: 'Some notes and articles I wrote',
+      badge: 'Article',
+      readMore: 'Read more ←',
+    },
     cta: {
       title: 'Ready to collaborate! 🚀',
       subtitle: "Let's start your project together",
@@ -69,6 +75,7 @@ export const translations = {
         twitter: 'Twitter',
         telegram: 'Telegram',
         instagram: 'Instagram',
+        linkedin: 'LinkedIn',
       },
       form: {
         sendMessage: 'Send a Message',
@@ -137,6 +144,12 @@ export const translations = {
       title: 'درباره من',
       subtitle: 'با تخصص‌ها و مهارت‌های من آشنا شوید',
     },
+    articles: {
+      title: 'مقالات',
+      subtitle: 'چند تا یادداشت و مقاله‌ای که نوشتم',
+      badge: 'مقاله',
+      readMore: 'ادامه مطلب ←',
+    },
     cta: {
       title: 'آماده همکاری هستیم! 🚀',
       subtitle: 'پروژه خود را با ما شروع کنید',
@@ -182,6 +195,7 @@ export const translations = {
         twitter: 'توییتر',
         telegram: 'تلگرام',
         instagram: 'اینستاگرام',
+        linkedin: 'لینکدین',
       },
       form: {
         sendMessage: 'ارسال پیام',

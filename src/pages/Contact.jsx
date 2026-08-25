@@ -4,12 +4,14 @@ import {
   FaEnvelope, 
   FaTelegram, 
   FaInstagram, 
+  FaLinkedin,
   FaPaperPlane 
 } from 'react-icons/fa';
 import SectionTitle from '../components/common/SectionTitle';
 import { BsTwitterX } from 'react-icons/bs';
 import { useLanguage } from '../hooks/useLanguage.jsx';
 import { usePageSEO } from '../hooks/usePageSEO';
+import { SITE_INFO } from '../utils/constants';
 
 const Contact = () => {
   usePageSEO('seo.contact.title', 'seo.contact.description');
@@ -84,9 +86,16 @@ const Contact = () => {
     {
       icon: FaInstagram,
       title: t('contact.methodTitles.instagram'),
-      value: '@mahdim.100',
-      href: 'https://www.instagram.com/mahdim.110?igsh=N3ViNGhrNGVsc2I=',
+      value: '@mahdim.110',
+      href: SITE_INFO.social.instagram,
       color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: FaLinkedin,
+      title: t('contact.methodTitles.linkedin'),
+      value: 'LinkedIn',
+      href: SITE_INFO.social.linkedin,
+      color: 'from-blue-600 to-blue-400'
     }
   ];
 

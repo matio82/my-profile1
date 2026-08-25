@@ -1,23 +1,29 @@
-import { FaGithub, FaTelegram, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaTelegram, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
+import { SITE_INFO } from '../../utils/constants';
 
 const Footer = () => {
   const { t } = useLanguage();
   const socialLinks = [
     {
       icon: FaGithub,
-      href: 'https://github.com/matio82',
+      href: SITE_INFO.social.github,
       label: 'GitHub'
     },
     {
       icon: FaTelegram,
-      href: 'https://t.me/Mm_02_08',
+      href: SITE_INFO.social.telegram,
       label: 'Telegram'
     },
     {
       icon: FaInstagram,
-      href: 'https://instagram.com/mahdim.100',
+      href: SITE_INFO.social.instagram,
       label: 'Instagram'
+    },
+    {
+      icon: FaLinkedin,
+      href: SITE_INFO.social.linkedin,
+      label: 'LinkedIn'
     }
   ];
 

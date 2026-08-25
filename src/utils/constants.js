@@ -10,8 +10,9 @@ export const SITE_INFO = {
   
   social: {
     github: 'https://github.com/matio82',
-    linkedin: 'https://linkedin.com/in/yourusername',
+    linkedin: 'https://linkedin.com/in/REPLACE_ME', // TODO: آیدی واقعی لینکدین رو جایگزین کن
     telegram: 'https://t.me/Mm_02_08',
+    instagram: 'https://www.instagram.com/mahdim.110',
     twitter: 'https://x.com/boy8_iranian',
   },
   

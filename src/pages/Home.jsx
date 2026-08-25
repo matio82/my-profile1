@@ -1,4 +1,5 @@
 import Hero from '../components/home/Hero';
+import Articles from '../components/home/Articles';
 import About from '../components/home/About';
 import FeaturedProjects from '../components/home/FeaturedProjects';
 import CTA from '../components/home/CTA';
@@ -15,6 +16,7 @@ const Home = () => {
       {/* محتوای صفحه */}
       <div className="relative z-10">
         <Hero />
+        <Articles />
         <About />
         <FeaturedProjects />
         <CTA />
