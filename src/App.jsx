@@ -10,15 +10,15 @@ import NotFound from './pages/NotFound';
 import ProjectDetail from './pages/ProjectDetail';
 import Admin from './pages/Admin';
 import { useTheme } from './hooks/useTheme.jsx';
-import HexagonalBackground from './components/HexagonalBackground';
+import GalaxyBackground from './components/GalaxyBackground';
 
 // چیدمان سایت عمومی: پس‌زمینه + نوبار + فوتر
 // پنل مدیریت (/admin) عمداً از این چیدمان جداست تا شبیه سایت عمومی نباشه
 function PublicLayout() {
   return (
     <>
-      <HexagonalBackground />
-      <div className="relative bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
+      <GalaxyBackground />
+      <div className="relative text-gray-900 dark:text-white transition-colors duration-300">
         <Navbar />
         <main>
           <Routes>

@@ -14,6 +14,7 @@
 body {
   font-family: 'Vazirmatn', sans-serif;
   text-align: start;
+  @apply bg-white dark:bg-gray-950 transition-colors duration-300;
 }
 
 /* افکت بلینک برای کرسر تایپ */

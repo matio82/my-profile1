@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Button from '../common/Button';
-import MagneticBackground from '../common/MagneticBackground';
 import { fadeInUp } from '../../utils/animations';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
@@ -9,9 +8,6 @@ const Hero = () => {
   const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-10">
-      {/* پس‌زمینه مغناطیسی */}
-      <MagneticBackground />
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* خوش آمدید - بدون کادر */}
