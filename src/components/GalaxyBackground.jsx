@@ -120,7 +120,7 @@ const GalaxyBackground = () => {
     }
 
     const initParticles = () => {
-      const count = Math.min(180, Math.floor((canvas.width * canvas.height) / 9000));
+      const count = Math.min(1000, Math.floor((canvas.width * canvas.height) / 500));
       particles = Array.from({ length: count }, () => new Particle());
     };
     initParticles();

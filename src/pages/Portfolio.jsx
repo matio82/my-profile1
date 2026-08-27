@@ -81,7 +81,7 @@ const Portfolio = () => {
   }, [filteredProjects, selectedCategory]);
 
   return (
-    <div className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen py-20 transition-colors duration-300">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
