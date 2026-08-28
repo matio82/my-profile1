@@ -5,7 +5,7 @@ import { fadeInUp } from '../../utils/animations';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, buildPath } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-10">
       <div className="container mx-auto px-4 relative z-10">
@@ -22,14 +22,14 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          {/* نام - فقط مهدی */}
+          {/* نام کامل - هماهنگ با زبان فعلی، برای سئو مهمه که این متن باشه نه فقط MAHDI */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 2, y: 1 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            MAHDI
+            {t('hero.name')}
             <span className="sr-only"> — {t('hero.subtitle')}</span>
           </motion.h1>
 
@@ -58,14 +58,14 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="flex gap-4 justify-center flex-wrap"
           >
-            <Link to="/portfolio">
+            <Link to={buildPath('/portfolio')}>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="primary" size="lg">
                   {t('hero.ctaPortfolio')}
                 </Button>
               </motion.div>
             </Link>
-            <Link to="/contact">
+            <Link to={buildPath('/contact')}>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="secondary" size="lg">
                   {t('hero.ctaContact')}

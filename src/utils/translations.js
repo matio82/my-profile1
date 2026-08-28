@@ -15,6 +15,7 @@ export const translations = {
       rights: 'All rights reserved',
     },
     hero: {
+      name: 'Mahdi Motee',
       subtitle: 'Frontend Developer | UI Designer',
       description: 'With several years of experience designing and building modern, user-friendly websites',
       ctaPortfolio: 'View My Work',
@@ -102,16 +103,16 @@ export const translations = {
     },
     seo: {
       home: {
-        title: 'Mahdi Motee',
-        description: "Mahdi's personal portfolio - frontend developer specializing in React, building modern, user-friendly websites.",
+        title: 'Mahdi Motee | Frontend Developer & UI/UX Designer',
+        description: "Mahdi Motee's personal portfolio - frontend developer specializing in React, building modern, user-friendly websites.",
       },
       portfolio: {
-        title: 'Mahdi Motee',
-        description: 'A collection of web development projects by Mahdi, including full-stack apps, dashboards, and e-commerce stores built with React and Node.js.',
+        title: 'Portfolio & Projects | Mahdi Motee',
+        description: 'A collection of web development projects by Mahdi Motee, including full-stack apps, dashboards, and e-commerce stores built with React and Node.js.',
       },
       contact: {
-        title: 'Mahdi Motee',
-        description: 'Get in touch with Mahdi for frontend development and UI/UX design collaborations and projects.',
+        title: 'Contact | Mahdi Motee',
+        description: 'Get in touch with Mahdi Motee for frontend development and UI/UX design collaborations and projects.',
       },
     },
     notFound: {
@@ -135,6 +136,7 @@ export const translations = {
       rights: 'تمامی حقوق محفوظ است',
     },
     hero: {
+      name: 'مهدی مطیع',
       subtitle: 'توسعه‌دهنده فرانت‌اند | طراح رابط کاربری',
       description: 'با بیش از چند سال تجربه در طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند',
       ctaPortfolio: 'مشاهده نمونه کارها',
@@ -222,16 +224,16 @@ export const translations = {
     },
     seo: {
       home: {
-        title: 'مهدی مطیع',
-        description: 'نمونه‌کار شخصی مهدی - توسعه‌دهنده فرانت‌اند با تخصص در React، طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند',
+        title: 'مهدی مطیع | توسعه‌دهنده فرانت‌اند و طراح UI/UX',
+        description: 'نمونه‌کار شخصی مهدی مطیع - توسعه‌دهنده فرانت‌اند با تخصص در React، طراحی و توسعه وب‌سایت‌های مدرن و کاربرپسند',
       },
       portfolio: {
-        title: 'مهدی مطیع',
-        description: 'مجموعه‌ای از پروژه‌های توسعه وب توسط مهدی، شامل اپلیکیشن‌های فول‌استک، داشبورد و فروشگاه آنلاین با React و Node.js',
+        title: 'نمونه‌کارها و پروژه‌ها | مهدی مطیع',
+        description: 'مجموعه‌ای از پروژه‌های توسعه وب توسط مهدی مطیع، شامل اپلیکیشن‌های فول‌استک، داشبورد و فروشگاه آنلاین با React و Node.js',
       },
       contact: {
-        title: 'مهدی مطیع',
-        description: 'برای همکاری و پروژه‌های توسعه فرانت‌اند و طراحی UI/UX با مهدی در ارتباط باشید',
+        title: 'تماس با من | مهدی مطیع',
+        description: 'برای همکاری و پروژه‌های توسعه فرانت‌اند و طراحی UI/UX با مهدی مطیع در ارتباط باشید',
       },
     },
     notFound: {

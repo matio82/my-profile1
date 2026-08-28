@@ -7,7 +7,7 @@ import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const Navbar = () => { // ⬅️ props رو حذف کن
   const { theme, toggleTheme } = useTheme(); // ⬅️ مستقیم از hook بگیر
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, toggleLanguage, t, buildPath } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -22,9 +22,9 @@ const Navbar = () => { // ⬅️ props رو حذف کن
   }, []);
 
   const navLinks = [
-    { path: '/', label: t('nav.home') },
-    { path: '/portfolio', label: t('nav.portfolio') },
-    { path: '/contact', label: t('nav.contact') },
+    { path: buildPath('/'), label: t('nav.home') },
+    { path: buildPath('/portfolio'), label: t('nav.portfolio') },
+    { path: buildPath('/contact'), label: t('nav.contact') },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -47,7 +47,7 @@ const Navbar = () => { // ⬅️ props رو حذف کن
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/">
+          <Link to={buildPath('/')}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold bg-gradient-to-r from-primary-light to-secondary-light bg-clip-text text-transparent"

@@ -5,7 +5,7 @@ import { useLanguage } from '../hooks/useLanguage.jsx';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
-  const { t } = useLanguage();
+  const { t, buildPath } = useLanguage();
   const DemoComponent = projectDemos[projectId];
 
   // اگه پروژه‌ای با این اسم توی registry ثبت نشده باشه
@@ -21,7 +21,7 @@ const ProjectDetail = () => {
             {t('notFound.description')}
           </p>
           <Link
-            to="/portfolio"
+            to={buildPath('/portfolio')}
             className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
           >
             {t('notFound.backHome')}

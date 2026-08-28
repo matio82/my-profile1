@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const CTA = () => {
-  const { t } = useLanguage();
+  const { t, buildPath } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -96,7 +96,7 @@ const CTA = () => {
         </motion.p>
 
         <motion.div variants={itemVariants}>
-          <Link to="/contact">
+          <Link to={buildPath('/contact')}>
             <motion.button
               variants={buttonVariants}
               whileHover="hover"

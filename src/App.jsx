@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
@@ -22,10 +22,18 @@ function PublicLayout() {
         <Navbar />
         <main>
           <Routes>
+            {/* نسخه‌ی فارسی: آدرس پیش‌فرض سایت */}
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
+
+            {/* نسخه‌ی انگلیسی: همون صفحه‌ها زیر پیشوند /en */}
+            <Route path="/en" element={<Home />} />
+            <Route path="/en/portfolio" element={<Portfolio />} />
+            <Route path="/en/contact" element={<Contact />} />
+            <Route path="/en/projects/:projectId" element={<ProjectDetail />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
@@ -48,14 +56,14 @@ function App() {
   }, [theme]);
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Routes>
         {/* پنل مدیریت: جدا از چیدمان عمومی سایت، بدون نوبار/فوتر */}
         <Route path="/admin" element={<Admin />} />
         <Route path="/*" element={<PublicLayout />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

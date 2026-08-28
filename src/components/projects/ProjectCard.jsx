@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const ProjectCard = ({ project }) => {
-  const { language, t } = useLanguage();
+  const { language, t, buildPath } = useLanguage();
   const title = project.title?.[language] ?? project.title;
   const description = project.description?.[language] ?? project.description;
   const arrow = language === 'fa' ? '←' : '→';
@@ -51,7 +51,7 @@ const ProjectCard = ({ project }) => {
           {project.demo && (
             project.isInternal ? (
               <Link
-                to={project.demo}
+                to={buildPath(project.demo)}
                 className="bg-blue-500 hover:bg-blue-600 p-3 rounded-full
                            transform hover:scale-110 transition-all"
                 onClick={(e) => e.stopPropagation()}
@@ -115,7 +115,7 @@ const ProjectCard = ({ project }) => {
         {/* دکمه مشاهده جزئیات */}
         {project.isInternal ? (
           <Link
-            to={project.demo}
+            to={buildPath(project.demo)}
             className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400
                        hover:gap-3 transition-all font-semibold"
           >
@@ -124,7 +124,7 @@ const ProjectCard = ({ project }) => {
           </Link>
         ) : (
           <Link
-            to={`/projects/${project.id}`}
+            to={buildPath(`/projects/${project.id}`)}
             className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400
                        hover:gap-3 transition-all font-semibold"
           >

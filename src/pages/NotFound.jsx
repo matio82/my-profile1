@@ -3,8 +3,8 @@ import { useLanguage } from '../hooks/useLanguage.jsx';
 import { usePageSEO } from '../hooks/usePageSEO';
 
 const NotFound = () => {
-  const { t } = useLanguage();
-  usePageSEO('notFound.title', 'notFound.description');
+  const { t, buildPath } = useLanguage();
+  usePageSEO('notFound.title', 'notFound.description', { noindex: true });
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">
@@ -17,7 +17,7 @@ const NotFound = () => {
           {t('notFound.description')}
         </p>
         <Link
-          to="/"
+          to={buildPath('/')}
           className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
         >
           {t('notFound.backHome')}

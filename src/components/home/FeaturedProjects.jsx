@@ -5,7 +5,7 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { useLanguage } from '../../hooks/useLanguage.jsx';
 
 const FeaturedProjects = () => {
-  const { t } = useLanguage();
+  const { t, buildPath } = useLanguage();
   // تعریف دستی داده پروژه کافه
   const featuredProjects = [
     {
@@ -75,7 +75,7 @@ const FeaturedProjects = () => {
                     <FiGithub size={20} /> <span>{t('featuredProjects.code')}</span>
                   </a>
                   <Link
-  to="/projects/cafe"
+  to={buildPath('/projects/cafe')}
   className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
 >
   <FiExternalLink size={20} />
