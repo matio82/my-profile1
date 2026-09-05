@@ -134,14 +134,14 @@ const Navbar = () => { // ⬅️ props رو حذف کن
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden pb-6"
+            className="md:hidden pb-6 px-2 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg"
           >
             {navLinks.map((link) => (
               <Link key={link.path} to={link.path}>
                 <motion.div
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsOpen(false)}
-                  className={`py-3 text-lg transition-colors ${
+                  className={`py-3 px-3 text-lg transition-colors ${
                     isActive(link.path)
                       ? 'text-primary-light dark:text-primary-dark font-semibold'
                       : 'text-gray-700 dark:text-gray-300'

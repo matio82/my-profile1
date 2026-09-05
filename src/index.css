@@ -11,9 +11,14 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Vazirmatn', sans-serif;
   text-align: start;
+  overflow-x: hidden;
   @apply bg-white dark:bg-gray-950 transition-colors duration-300;
 }
 
